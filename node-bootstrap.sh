@@ -16,16 +16,15 @@ then
     apt-get install -y vim git subversion curl
     apt-get install -y memcached build-essential
 
-    # Install latest stable version of mongo
-    apt-get install mongodb-10gen
+    # Add nodejs repo
+    add-apt-repository -y ppa:chris-lea/node.js
+    apt-get -y update
 
-    # Build latest node.js from source
-    cd /tmp
-    git clone https://github.com/joyent/node.git
-    cd node
-    ./configure
-    make
-    make install
+    # Install nodejs
+    apt-get install -y nodejs
+
+    # Install latest stable version of mongo
+    apt-get install -y mongodb-10gen
 
     # Symlink our host www to the guest /var/www folder
     ln -s /vagrant/www /var/www
