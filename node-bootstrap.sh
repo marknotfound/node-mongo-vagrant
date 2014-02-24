@@ -3,10 +3,10 @@
 # Get root up in here
 sudo su
 
-# Just a simple way of checking if you we need to install everything
+# Just a simple way of checking if we need to install everything
 if [ ! -d "/var/www" ]
 then
-    # Add mongo to apt
+    # Add MongoDB to apt
     apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
     echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/10gen.list
 
@@ -23,14 +23,14 @@ then
     # Install nodejs
     apt-get install -y nodejs
 
-    # Install latest stable version of mongo
+    # Install latest stable version of MongoDB
     apt-get install -y mongodb-10gen
 
     # Symlink our host www to the guest /var/www folder
     ln -s /vagrant/www /var/www
 
     # Victory!
-    echo "You're all done!  Your default node server is now running. Find it in node-mongo-vagrant/www/default/"
+    echo "You're all done! Your default node server should now be listening on http://10.0.33.34/. For code, see: node-mongo-vagrant/www/default/server.js."
 
     # Run it
     node /var/www/default/server.js
