@@ -1,5 +1,7 @@
 # Node.js / MongoDB / Ubuntu 12.04 64-bit Vagrant Box
 
+### UPDATE: This repo has not been maintained for years. Please consider using docker and docker-compose instead.
+
 ### How to Use
 1. Download and install VirtualBox by [clicking here](https://www.virtualbox.org/wiki/Downloads)
 2. Download and install Vagrant by [clicking here](http://downloads.vagrantup.com/)
